@@ -83,9 +83,8 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export QT_QPA_PLATFORM="wayland-egl"
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export DOCKER_BUILDKIT=1
-#export GDK_BACKEND=wayland            # For GTK applications (firefox)
+export GDK_BACKEND=wayland            # For GTK applications (firefox)
 export MOZ_ENABLE_WAYLAND=1           # Firefox
-#export PS1="[%n@%M]%~ %% "
 export XDG_CURRENT_DESKTOP=sway
 
 # jetbrains and other java apps
@@ -93,7 +92,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export STUDIO_JDK=/usr/lib/jvm/java-17-openjdk/
 
 export PATH=$PATH:$(go env GOPATH)/bin
-export GOPRIVATE=gitlab.com/bdim
 export GO111MODULE=on
 
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
@@ -121,8 +119,5 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# add Pulumi to the PATH
-export PATH=$PATH:$HOME/.pulumi/bin
 
 alias docker=podman
