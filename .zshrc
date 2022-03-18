@@ -78,12 +78,11 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+## sway settings
 
+# wayland/sway compability settings
 export QT_QPA_PLATFORM="wayland-egl"
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export DOCKER_BUILDKIT=1
-export GDK_BACKEND=wayland            # For GTK applications (firefox)
 export MOZ_ENABLE_WAYLAND=1           # Firefox
 export XDG_CURRENT_DESKTOP=sway
 
@@ -91,12 +90,15 @@ export XDG_CURRENT_DESKTOP=sway
 export _JAVA_AWT_WM_NONREPARENTING=1
 export STUDIO_JDK=/usr/lib/jvm/java-17-openjdk/
 
+# ssh agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# docker
+export DOCKER_BUILDKIT=1
+
+# go
 export PATH=$PATH:$(go env GOPATH)/bin
 export GO111MODULE=on
-
-if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-  exec sway
-fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -120,4 +122,14 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
+
 alias docker=podman
+alias docker-compose=podman-compose
+
+
+# start sway on login
+if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+  exec sway
+fi
