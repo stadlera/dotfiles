@@ -1,0 +1,19 @@
+# Output configuration
+set $mon1 DP-1
+set $mon2 HDMI-A-1
+
+output $mon1 resolution 2560x1440@143.912Hz position 0,640
+output $mon2 resolution 2560x1440@119.998Hz position 2560,0
+output $mon2 transform "270"
+
+workspace $ws1 output $mon1
+workspace $ws2 output $mon1
+workspace $ws3 output $mon1
+workspace $ws4 output $mon1
+workspace $ws5 output $mon1
+workspace $ws6 output $mon2
+workspace $ws7 output $mon2
+workspace $ws8 output $mon2
+workspace $ws9 output $mon2
+workspace $ws0 output $mon2
+
