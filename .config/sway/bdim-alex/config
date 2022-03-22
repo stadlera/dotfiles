@@ -1,0 +1,28 @@
+
+set $mon0 eDP-1
+set $mon1 HDMI-A-1
+set $mon2 DP-1
+
+# output $mon0 resolution 1920x1080@144Hz position 5120,500
+output $mon0 disable
+output $mon1 resolution 2560x1440@143.912Hz position 1920,640
+output $mon2 resolution 2560x1440@119.998Hz position 4480,0
+output $mon2 transform "270"
+
+workspace $ws00 output $mon0
+workspace $ws1 output $mon1
+workspace $ws2 output $mon1
+workspace $ws3 output $mon1
+workspace $ws4 output $mon1
+workspace $ws5 output $mon1
+workspace $ws6 output $mon2
+workspace $ws7 output $mon2
+workspace $ws8 output $mon2
+workspace $ws9 output $mon2
+workspace $ws0 output $mon2
+
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
+

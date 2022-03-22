@@ -41,11 +41,6 @@ input * {
     xkb_options caps:swapescape
 } 
 
-input type:touchpad {
-    tap enabled
-    natural_scroll enabled
-}
-
 input * xkb_numlock enable
 
 # Window settings
