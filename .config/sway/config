@@ -2,8 +2,8 @@
 set $mod Mod4
 set $term alacritty
 set $menu wofi --show=drun --lines=5 --prompt=""
-set $screenshot grim ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
-set $screenclip slurp | grim -g - ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenshot grim ~/images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenclip slurp | grim -g - ~/images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 set $background ~/.images/hex.jpg
 
 # Colors
@@ -168,6 +168,10 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
+
+# Taking screenshots
+bindsym Print exec $screenshot
+bindsym Shift+Print exec $screenclip
 
 # Modes
 mode "resize" {
